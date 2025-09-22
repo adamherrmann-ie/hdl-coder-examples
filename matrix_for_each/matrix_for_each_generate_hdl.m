@@ -1,6 +1,8 @@
 clc;
 clear all;
 
+use_mref = true;
+
 %% Setup Model
 input_signal                        = fi(randi([0,15],320,4),0,4,0);
 parallelism                         = 32;
@@ -32,11 +34,10 @@ valid_in.signals.dimensions       = 1;
 valid_in.time                     = signal_time_vector;
 valid_in.signals.values           = [boolean(ones(signal_length,1)); boolean(zeros(latency,1))];   
 
+matrix_for_each_data_types.input = numerictype(0,4,0);
 matrix_for_each_data_types.output = numerictype(0,16,0);
 
 %% Begin HDL Generation
-
-use_mref = true;
 
 proj = currentProject;
 rtl_directory = regexprep(proj.ProjectStartupFolder, 'work$', 'rtl');
