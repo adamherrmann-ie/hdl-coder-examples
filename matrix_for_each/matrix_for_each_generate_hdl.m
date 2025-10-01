@@ -36,18 +36,12 @@ matrix_for_each_data_types.output = numerictype(0,16,0);
 
 %% Begin HDL Generation
 
-use_mref = true;
 
 proj = currentProject;
 rtl_directory = regexprep(proj.ProjectStartupFolder, 'work$', 'rtl');
 
-if (use_mref)
-    full_hierarchical_path   = 'matrix_for_each_wrapper/matrix_for_each_top_mref';
-    block_name               = 'matrix_for_each_top_mref';
-else
-    full_hierarchical_path   = 'matrix_for_each_wrapper/matrix_for_each_top_sref';
-    block_name               = 'matrix_for_each_top_sref';
-end
+full_hierarchical_path   = 'matrix_for_each_wrapper/matrix_for_each_top_sref';
+block_name               = 'matrix_for_each_top_sref';
 
 module_prefix            = 'matrix_foreach_';
 reset_input_port         = 'i_rstn';
@@ -108,6 +102,7 @@ hdlset_param('matrix_for_each_wrapper','EDAScriptGeneration', 'off');
 hdlset_param('matrix_for_each_wrapper','GenerateHDLTestBench', 'off');
 hdlset_param('matrix_for_each_wrapper', 'UseSingleLibrary', 'on');
 hdlset_param('matrix_for_each_wrapper', 'UseVerilogTimescale', 'off');
+set_param('matrix_for_each_wrapper', 'DefaultParameterBehavior', 'Inlined');
 
 % Workflow Configuration Settings
 % Construct the Workflow Configuration Object with default settings
