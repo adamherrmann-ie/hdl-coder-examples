@@ -10,10 +10,10 @@ matrix_for_each_run;
 proj = currentProject;
 rtl_directory = regexprep(proj.ProjectStartupFolder, 'work$', 'rtl');
 
-full_hierarchical_path   = 'matrix_for_each_wrapper/matrix_for_each_top_sref';
-block_name               = 'matrix_for_each_top_sref';
+full_hierarchical_path   = 'matrix_for_each_wrapper/matrix_for_each_top';
+block_name               = 'matrix_for_each_top';
 
-module_prefix            = 'matrix_foreach_';
+module_prefix            = 'mf_';
 reset_input_port         = 'i_rstn';
 clock_input_port         = 'i_clk';
 

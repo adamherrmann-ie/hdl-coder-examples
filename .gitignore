@@ -25,6 +25,7 @@ helpsearch*/
 slprj/
 sccprj/
 codegen/
+hdlsrc/
 
 # Cache files
 *.slxc
