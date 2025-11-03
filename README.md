@@ -1,5 +1,7 @@
-# hdl-coder-examples
-Examples for HDL Coder
+# HDL Coder Examples
+This repo contains examples for running HDL Coder and HDL Verifier by MathWorks.
+
+- matrix_for_each is a simple example showing the implementation of a simple multiply and add operation appied to a matrix with maximum code reuse across multiple instances.
 
 ## Simulating HDL in Verilator and Inspecting Waves
 
