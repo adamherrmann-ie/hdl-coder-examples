@@ -30,11 +30,16 @@ To make sure your DISPLAY connection is working. Run `xeyes`, you should see the
 
 ### Running Verilator
 
-You can now open the `adder` example and verilate and simulate the adder system verilog files.
-
+You can now open the `adder` exaple in `/adder` and verilate it to create C++:
 ```
 verilator -Wall --cc adder.sv --exe sim_main.cpp --trace
+```
+Next, we make the C++ into an executable:
+```
 make -C obj_dir -f Vadder.mk Vadder
+```
+Now run it and open the generated waves in `gtkwave`:
+```
 ./obj_dir/Vadder
 gtkwave waveform.vcd
 ```
